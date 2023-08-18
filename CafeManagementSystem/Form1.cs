@@ -56,5 +56,15 @@ namespace CafeManagementSystem
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
