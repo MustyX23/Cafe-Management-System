@@ -39,6 +39,9 @@ namespace CafeManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            UserOrder userOrder = new UserOrder();
+            userOrder.Show();
+            this.Hide();
 
         }
 
