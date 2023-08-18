@@ -54,7 +54,9 @@ namespace CafeManagementSystem
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            GuestOrder guest = new GuestOrder();
+            guest.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)
