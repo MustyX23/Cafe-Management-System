@@ -57,6 +57,8 @@ namespace CafeManagementSystem
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -184,24 +186,26 @@ namespace CafeManagementSystem
             this.UsersGV.ThemeStyle.RowsStyle.Height = 30;
             this.UsersGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
             this.UsersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.UsersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersGV_CellContentClick);
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Orange;
+            this.button6.BackColor = System.Drawing.Color.OrangeRed;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.Yellow;
+            this.button6.ForeColor = System.Drawing.Color.Transparent;
             this.button6.Location = new System.Drawing.Point(226, 473);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(95, 50);
             this.button6.TabIndex = 35;
             this.button6.Text = "Delete";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Orange;
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -212,6 +216,7 @@ namespace CafeManagementSystem
             this.button5.TabIndex = 34;
             this.button5.Text = "Edit";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -219,7 +224,7 @@ namespace CafeManagementSystem
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(24, 473);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 50);
@@ -430,5 +435,7 @@ namespace CafeManagementSystem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DataGridView UsersGV;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
