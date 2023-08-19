@@ -59,6 +59,7 @@ namespace CafeManagementSystem
             command.ExecuteNonQuery();
             MessageBox.Show("User is successfully created!");
             connection.Close();
+            Populate();
         }
 
         private void UsersForm_Load(object sender, EventArgs e)
@@ -66,6 +67,47 @@ namespace CafeManagementSystem
             Populate();
         }
 
+        private void UsersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UsersUsernameTBL.Text = UsersGV.SelectedRows[0].Cells[0].Value.ToString();
+            UsersPasswordTBL.Text = UsersGV.SelectedRows[0].Cells[1].Value.ToString();
+            UsersPhoneTBL.Text = UsersGV.SelectedRows[0].Cells[2].Value.ToString();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (UsersUsernameTBL.Text == "")
+            {
+                MessageBox.Show("Select The User you want to Delete");
+            }
+            else
+            {
+                connection.Open();
+                string query = "DELETE FROM Users WHERE Username = '"+UsersUsernameTBL.Text+"'";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("User is successfully Deleted!");
+                connection.Close();
+                Populate();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (UsersUsernameTBL.Text == "" || UsersPasswordTBL.Text == "" || UsersPhoneTBL.Text == "")
+            {
+                MessageBox.Show("All fields must be filled.");
+            }
+            else
+            {
+                connection.Open();
+                string query = "UPDATE Users SET Phone = '"+UsersPhoneTBL.Text+"', Password = '"+UsersPasswordTBL.Text+"' WHERE Username = '"+UsersUsernameTBL.Text+"'";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("User is successfully Updated!");
+                connection.Close();
+                Populate();
+            }
+        }
     }
 }
