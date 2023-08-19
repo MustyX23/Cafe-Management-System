@@ -72,6 +72,7 @@
             this.button4.TabIndex = 28;
             this.button4.Text = "Users";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -86,6 +87,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "Order";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -98,6 +100,7 @@
             this.label4.Size = new System.Drawing.Size(91, 29);
             this.label4.TabIndex = 26;
             this.label4.Text = "LogOut";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel1
             // 
