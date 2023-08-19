@@ -21,5 +21,24 @@ namespace CafeManagementSystem
             Form1 login = new Form1();
             login.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ItemsForm items = new ItemsForm();
+            items.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Hide();
+            UsersForm users = new UsersForm();
+            users.Show();
+        }
     }
 }
