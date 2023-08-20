@@ -41,5 +41,10 @@ namespace CafeManagementSystem
             Form1 login = new Form1();
             login.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

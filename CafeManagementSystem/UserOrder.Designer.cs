@@ -134,7 +134,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(900, 697);
+            this.button2.Location = new System.Drawing.Point(24, 682);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 40);
             this.button2.TabIndex = 22;
@@ -144,22 +144,22 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Forte", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Sienna;
-            this.label8.Location = new System.Drawing.Point(833, 318);
+            this.label8.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(835, 329);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 38);
+            this.label8.Size = new System.Drawing.Size(210, 45);
             this.label8.TabIndex = 21;
             this.label8.Text = "Your Order";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Forte", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Sienna;
-            this.label6.Location = new System.Drawing.Point(1135, 697);
+            this.label6.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(952, 693);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 38);
+            this.label6.Size = new System.Drawing.Size(269, 45);
             this.label6.TabIndex = 20;
             this.label6.Text = "Order Amount";
             // 
@@ -211,13 +211,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Forte", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Sienna;
-            this.label1.Location = new System.Drawing.Point(630, 16);
+            this.label1.Font = new System.Drawing.Font("LEMON MILK Medium", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(544, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 52);
+            this.label1.Size = new System.Drawing.Size(376, 68);
             this.label1.TabIndex = 12;
             this.label1.Text = "Place Order";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button3
             // 

@@ -40,5 +40,10 @@ namespace CafeManagementSystem
             UsersForm users = new UsersForm();
             users.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
