@@ -11,11 +11,12 @@ namespace CafeManagementSystem
 {
     public partial class UserOrder : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
         public UserOrder()
         {
             InitializeComponent();
         }
+
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -58,10 +59,36 @@ namespace CafeManagementSystem
             ItemsGV.DataSource = dataSet.Tables[0];
             connection.Close();
         }
+        private void FilterByCategory()
+        {
+            connection.Open();
+            string query = "SELECT * FROM Items WHERE ItemCategory = '"+Categories.SelectedItem.ToString()+"'";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(sqlDataAdapter);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            ItemsGV.DataSource = dataSet.Tables[0];
+            connection.Close();
+        }
 
         int num, flag;
-        decimal price, total;
+        decimal price, total, sum;
         string item, category;
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            FilterByCategory();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Populate();
+        }
+
+        private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -80,7 +107,9 @@ namespace CafeManagementSystem
                 table.Rows.Add(num, item, category, price, total);
                 OrdersGV.DataSource = table;
                 flag = 0;
-            }
+                sum += total;
+                LabelAmount.Text = sum.ToString() + " lv.";
+            }            
         }
 
 
