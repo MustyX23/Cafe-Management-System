@@ -35,6 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Guest = new System.Windows.Forms.TextBox();
+            this.OrderNum = new System.Windows.Forms.TextBox();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ItemsGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.OrdersGV = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -43,8 +46,6 @@
             this.LabelAmount = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Categories = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,6 +57,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.Controls.Add(this.Guest);
+            this.panel1.Controls.Add(this.OrderNum);
+            this.panel1.Controls.Add(this.DateLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ItemsGV);
             this.panel1.Controls.Add(this.OrdersGV);
@@ -64,13 +68,44 @@
             this.panel1.Controls.Add(this.LabelAmount);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Categories);
             this.panel1.Location = new System.Drawing.Point(150, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 750);
             this.panel1.TabIndex = 0;
+            // 
+            // Guest
+            // 
+            this.Guest.Font = new System.Drawing.Font("Maiandra GD", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Guest.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Guest.Location = new System.Drawing.Point(52, 211);
+            this.Guest.Name = "Guest";
+            this.Guest.Size = new System.Drawing.Size(132, 33);
+            this.Guest.TabIndex = 49;
+            this.Guest.Text = "Guest";
+            this.Guest.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // OrderNum
+            // 
+            this.OrderNum.Font = new System.Drawing.Font("Maiandra GD", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OrderNum.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.OrderNum.Location = new System.Drawing.Point(52, 172);
+            this.OrderNum.Name = "OrderNum";
+            this.OrderNum.Size = new System.Drawing.Size(132, 33);
+            this.OrderNum.TabIndex = 48;
+            this.OrderNum.Text = "OrderNum";
+            this.OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DateLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.DateLabel.Location = new System.Drawing.Point(1232, 16);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(105, 45);
+            this.DateLabel.TabIndex = 47;
+            this.DateLabel.Text = "Date";
             // 
             // label1
             // 
@@ -107,7 +142,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ItemsGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.ItemsGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.ItemsGV.Location = new System.Drawing.Point(673, 96);
+            this.ItemsGV.Location = new System.Drawing.Point(673, 87);
             this.ItemsGV.Name = "ItemsGV";
             this.ItemsGV.RowHeadersVisible = false;
             this.ItemsGV.RowTemplate.Height = 30;
@@ -218,11 +253,12 @@
             this.LabelAmount.AutoSize = true;
             this.LabelAmount.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelAmount.ForeColor = System.Drawing.Color.Transparent;
-            this.LabelAmount.Location = new System.Drawing.Point(899, 680);
+            this.LabelAmount.Location = new System.Drawing.Point(910, 681);
             this.LabelAmount.Name = "LabelAmount";
             this.LabelAmount.Size = new System.Drawing.Size(269, 45);
             this.LabelAmount.TabIndex = 41;
             this.LabelAmount.Text = "Order Amount";
+            this.LabelAmount.Click += new System.EventHandler(this.LabelAmount_Click);
             // 
             // button3
             // 
@@ -252,28 +288,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Place the Order";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Maiandra GD", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(52, 209);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 25);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "SellerName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Maiandra GD", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(52, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 25);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "OrderNum";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Categories
             // 
@@ -345,8 +360,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox Categories;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView ItemsGV;
         private Guna.UI2.WinForms.Guna2DataGridView OrdersGV;
         private System.Windows.Forms.TextBox Quantity;
@@ -354,5 +367,8 @@
         private System.Windows.Forms.Label LabelAmount;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.TextBox Guest;
+        private System.Windows.Forms.TextBox OrderNum;
     }
 }

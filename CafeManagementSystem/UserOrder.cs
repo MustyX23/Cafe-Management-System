@@ -90,6 +90,21 @@ namespace CafeManagementSystem
 
         }
 
+        private void LabelAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            string query = "INSERT into Orders VALUES (" + OrderNum.Text + ", '" + DateLabel.Text + "', '" + SellerName.Text + "', '" + LabelAmount.Text + "')";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Order is Successfully Created!");
+            connection.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (Quantity.Text == "")
@@ -123,6 +138,8 @@ namespace CafeManagementSystem
             table.Columns.Add("Category", typeof(string));
             table.Columns.Add("Unit Price", typeof(decimal));
             table.Columns.Add("Total", typeof(decimal));
+            DateLabel.Text = DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
+            SellerName.Text = Form1.user;
         }
 
         private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)

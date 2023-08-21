@@ -48,6 +48,8 @@ namespace CafeManagementSystem
             table.Columns.Add("Category", typeof(string));
             table.Columns.Add("Unit Price", typeof(decimal));
             table.Columns.Add("Total", typeof(decimal));
+            OrdersGV.DataSource = table;
+            DateLabel.Text = DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -81,6 +83,26 @@ namespace CafeManagementSystem
         private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void LabelAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            string query = "INSERT into Orders VALUES (" + OrderNum.Text + ", '" + DateLabel.Text + "', '" + Guest.Text + "', '" + LabelAmount.Text + "')";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Order is Successfully Created!");
+            connection.Close();
         }
 
         string item, category;

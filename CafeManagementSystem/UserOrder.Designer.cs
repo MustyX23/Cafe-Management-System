@@ -37,6 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.ItemsGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.OrdersGV = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -85,6 +86,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.Controls.Add(this.DateLabel);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.ItemsGV);
             this.panel1.Controls.Add(this.OrdersGV);
@@ -101,6 +103,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 750);
             this.panel1.TabIndex = 12;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DateLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.DateLabel.Location = new System.Drawing.Point(1241, 15);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(105, 45);
+            this.DateLabel.TabIndex = 48;
+            this.DateLabel.Text = "Date";
             // 
             // button5
             // 
@@ -271,6 +284,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Place the Order";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -293,6 +307,7 @@
             this.LabelAmount.Size = new System.Drawing.Size(269, 45);
             this.LabelAmount.TabIndex = 20;
             this.LabelAmount.Text = "Order Amount";
+            this.LabelAmount.Click += new System.EventHandler(this.LabelAmount_Click);
             // 
             // button1
             // 
@@ -409,5 +424,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView OrdersGV;
         private Guna.UI2.WinForms.Guna2DataGridView ItemsGV;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label DateLabel;
     }
 }
