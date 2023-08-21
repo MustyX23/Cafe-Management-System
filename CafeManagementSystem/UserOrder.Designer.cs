@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
@@ -86,6 +87,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.DateLabel);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.ItemsGV);
@@ -278,7 +280,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(24, 682);
+            this.button2.Location = new System.Drawing.Point(747, 698);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 40);
             this.button2.TabIndex = 22;
@@ -380,6 +382,21 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Orange;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.Yellow;
+            this.button6.Location = new System.Drawing.Point(1227, 693);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(199, 40);
+            this.button6.TabIndex = 49;
+            this.button6.Text = "View the Orders";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -425,5 +442,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView ItemsGV;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.Button button6;
     }
 }

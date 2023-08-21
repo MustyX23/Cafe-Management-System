@@ -105,6 +105,12 @@ namespace CafeManagementSystem
             connection.Close();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ViewOrders viewOrders = new ViewOrders();
+            viewOrders.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (Quantity.Text == "")
