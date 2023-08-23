@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestOrder));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Guest = new System.Windows.Forms.TextBox();
             this.OrderNum = new System.Windows.Forms.TextBox();
@@ -49,9 +50,11 @@
             this.Categories = new System.Windows.Forms.ComboBox();
             this.logOut = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -223,7 +226,7 @@
             this.OrdersGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.OrdersGV.ThemeStyle.RowsStyle.Height = 30;
             this.OrdersGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            this.OrdersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;            
+            this.OrdersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // Quantity
             // 
@@ -266,7 +269,7 @@
             this.addButton.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addButton.ForeColor = System.Drawing.Color.Yellow;
             this.addButton.Location = new System.Drawing.Point(930, 383);
-            this.addButton.Name = "button3";
+            this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(132, 41);
             this.addButton.TabIndex = 40;
             this.addButton.Text = "Add to Cart";
@@ -281,7 +284,7 @@
             this.placeOrderButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.placeOrderButton.ForeColor = System.Drawing.Color.Yellow;
             this.placeOrderButton.Location = new System.Drawing.Point(52, 688);
-            this.placeOrderButton.Name = "button2";
+            this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(199, 40);
             this.placeOrderButton.TabIndex = 22;
             this.placeOrderButton.Text = "Place the Order";
@@ -309,7 +312,7 @@
             this.logOut.ForeColor = System.Drawing.Color.Tomato;
             this.logOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.logOut.Location = new System.Drawing.Point(25, 767);
-            this.logOut.Name = "label4";
+            this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(91, 29);
             this.logOut.TabIndex = 7;
             this.logOut.Text = "LogOut";
@@ -322,11 +325,21 @@
             this.exitLabel.Font = new System.Drawing.Font("Forte", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exitLabel.ForeColor = System.Drawing.Color.Crimson;
             this.exitLabel.Location = new System.Drawing.Point(1565, 0);
-            this.exitLabel.Name = "label7";
+            this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(38, 35);
             this.exitLabel.TabIndex = 11;
             this.exitLabel.Text = "X";
             this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-254, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(493, 718);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // GuestOrder
             // 
@@ -337,7 +350,9 @@
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.logOut);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GuestOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemForm";
@@ -346,6 +361,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +384,6 @@
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.TextBox Guest;
         private System.Windows.Forms.TextBox OrderNum;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

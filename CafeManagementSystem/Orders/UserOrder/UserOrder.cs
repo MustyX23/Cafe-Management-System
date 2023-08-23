@@ -91,6 +91,11 @@ namespace CafeManagementSystem
             connection.Close();
         }
 
+        private void Categories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             ViewOrders viewOrders = new ViewOrders();

@@ -81,7 +81,7 @@ namespace CafeManagementSystem
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // addButton
+            // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
             this.button3.FlatAppearance.BorderSize = 0;
@@ -96,7 +96,7 @@ namespace CafeManagementSystem
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // logOut
+            // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
@@ -268,7 +268,7 @@ namespace CafeManagementSystem
             this.UsersUsernameTBL.TabIndex = 24;
             this.UsersUsernameTBL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // exitLabel
+            // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
@@ -402,6 +402,7 @@ namespace CafeManagementSystem
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsersForm";

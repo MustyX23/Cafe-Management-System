@@ -34,9 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserOrder));
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.DateLabel = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.ItemsGV = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -52,13 +54,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // exitLabel
+            // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
@@ -71,7 +72,7 @@
             this.label7.Text = "X";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // logOut
+            // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
@@ -105,6 +106,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 750);
             this.panel1.TabIndex = 12;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Orange;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.Yellow;
+            this.button6.Location = new System.Drawing.Point(1227, 693);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(199, 40);
+            this.button6.TabIndex = 49;
+            this.button6.Text = "View the Orders";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // DateLabel
             // 
@@ -272,7 +288,7 @@
             this.OrderNum.Text = "OrderNum";
             this.OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // placeOrderButton
+            // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -336,6 +352,7 @@
             this.Categories.Size = new System.Drawing.Size(218, 33);
             this.Categories.TabIndex = 13;
             this.Categories.Text = "Category";
+            this.Categories.SelectedIndexChanged += new System.EventHandler(this.Categories_SelectedIndexChanged);
             this.Categories.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label1
@@ -349,7 +366,7 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Place Order";
             // 
-            // addButton
+            // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
             this.button3.FlatAppearance.BorderSize = 0;
@@ -379,21 +396,6 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Orange;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.Yellow;
-            this.button6.Location = new System.Drawing.Point(1227, 693);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(199, 40);
-            this.button6.TabIndex = 49;
-            this.button6.Text = "View the Orders";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -406,6 +408,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserOrder";

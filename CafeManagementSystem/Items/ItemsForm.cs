@@ -74,6 +74,17 @@ namespace CafeManagementSystem
             ItemsGV.DataSource = dataSet.Tables[0];
             connection.Close();
         }
+        private void FilterByCategory()
+        {
+            connection.Open();
+            string query = "SELECT * FROM Items WHERE ItemCategory = '" + ItemCat.SelectedItem.ToString() + "'";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(sqlDataAdapter);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            ItemsGV.DataSource = dataSet.Tables[0];
+            connection.Close();
+        }
 
         private void ItemsForm_Load(object sender, EventArgs e)
         {
@@ -122,6 +133,11 @@ namespace CafeManagementSystem
                 connection.Close();
                 Populate();
             }
+        }
+
+        private void ItemCat_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            FilterByCategory();
         }
     }
 }
