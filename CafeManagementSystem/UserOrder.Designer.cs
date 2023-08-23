@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
+            // exitLabel
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
@@ -71,7 +71,7 @@
             this.label7.Text = "X";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label4
+            // logOut
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
@@ -238,7 +238,6 @@
             this.OrdersGV.ThemeStyle.RowsStyle.Height = 30;
             this.OrdersGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
             this.OrdersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.OrdersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGV_CellContentClick);
             // 
             // Quantity
             // 
@@ -273,7 +272,7 @@
             this.OrderNum.Text = "OrderNum";
             this.OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button2
+            // placeOrderButton
             // 
             this.button2.BackColor = System.Drawing.Color.Orange;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -309,7 +308,6 @@
             this.LabelAmount.Size = new System.Drawing.Size(269, 45);
             this.LabelAmount.TabIndex = 20;
             this.LabelAmount.Text = "Order Amount";
-            this.LabelAmount.Click += new System.EventHandler(this.LabelAmount_Click);
             // 
             // button1
             // 
@@ -350,9 +348,8 @@
             this.label1.Size = new System.Drawing.Size(376, 68);
             this.label1.TabIndex = 12;
             this.label1.Text = "Place Order";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button3
+            // addButton
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
             this.button3.FlatAppearance.BorderSize = 0;

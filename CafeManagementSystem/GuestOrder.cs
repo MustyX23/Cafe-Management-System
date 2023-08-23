@@ -16,7 +16,12 @@ namespace CafeManagementSystem
             InitializeComponent();
         }
 
+        DataTable table = new DataTable();
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
+
+        int num, flag;
+        decimal price, total, sum;
+        string item, category;
 
         private void Populate()
         {
@@ -52,25 +57,22 @@ namespace CafeManagementSystem
             DateLabel.Text = DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void exitLabel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void logOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 login = new Form1();
+            Login login = new Login();
             login.Show();
         }
 
         private void Categories_SelectionChangeCommitted(object sender, EventArgs e)
         {
             FilterByCategory();
-        }
-
-        int num, flag;
-        decimal price, total, sum;
+        }       
 
         private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -79,23 +81,7 @@ namespace CafeManagementSystem
             price = decimal.Parse(ItemsGV.SelectedRows[0].Cells[3].Value.ToString());
             flag = 1;
         }
-
-        private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void LabelAmount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void PlaceOrder_Button(object sender, EventArgs e)
         {
             connection.Open();
             string query = "INSERT into Orders VALUES (" + OrderNum.Text + ", '" + DateLabel.Text + "', '" + Guest.Text + "', '" + LabelAmount.Text + "')";
@@ -103,11 +89,9 @@ namespace CafeManagementSystem
             command.ExecuteNonQuery();
             MessageBox.Show("Order is Successfully Created!");
             connection.Close();
-        }
+        }        
 
-        string item, category;
-
-        private void button3_Click(object sender, EventArgs e)
+        private void AddButon_Click(object sender, EventArgs e)
         {
             if (Quantity.Text == "")
             {
@@ -128,9 +112,5 @@ namespace CafeManagementSystem
                 LabelAmount.Text = sum.ToString() + " lv.";
             }
         }
-
-        DataTable table = new DataTable();
-
-
     }
 }

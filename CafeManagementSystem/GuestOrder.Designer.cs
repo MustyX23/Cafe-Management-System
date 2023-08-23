@@ -44,11 +44,11 @@
             this.Quantity = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.LabelAmount = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.placeOrderButton = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Label();
+            this.exitLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
@@ -66,8 +66,8 @@
             this.panel1.Controls.Add(this.Quantity);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.LabelAmount);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.addButton);
+            this.panel1.Controls.Add(this.placeOrderButton);
             this.panel1.Controls.Add(this.Categories);
             this.panel1.Location = new System.Drawing.Point(150, 46);
             this.panel1.Name = "panel1";
@@ -223,8 +223,7 @@
             this.OrdersGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.OrdersGV.ThemeStyle.RowsStyle.Height = 30;
             this.OrdersGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            this.OrdersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.OrdersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGV_CellContentClick);
+            this.OrdersGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;            
             // 
             // Quantity
             // 
@@ -258,37 +257,36 @@
             this.LabelAmount.Size = new System.Drawing.Size(269, 45);
             this.LabelAmount.TabIndex = 41;
             this.LabelAmount.Text = "Order Amount";
-            this.LabelAmount.Click += new System.EventHandler(this.LabelAmount_Click);
             // 
-            // button3
+            // addButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Orange;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Yellow;
-            this.button3.Location = new System.Drawing.Point(930, 383);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 41);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Add to Cart";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.addButton.BackColor = System.Drawing.Color.Orange;
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addButton.ForeColor = System.Drawing.Color.Yellow;
+            this.addButton.Location = new System.Drawing.Point(930, 383);
+            this.addButton.Name = "button3";
+            this.addButton.Size = new System.Drawing.Size(132, 41);
+            this.addButton.TabIndex = 40;
+            this.addButton.Text = "Add to Cart";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.AddButon_Click);
             // 
-            // button2
+            // placeOrderButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(52, 688);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 40);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Place the Order";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.placeOrderButton.BackColor = System.Drawing.Color.Orange;
+            this.placeOrderButton.FlatAppearance.BorderSize = 0;
+            this.placeOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.placeOrderButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.placeOrderButton.ForeColor = System.Drawing.Color.Yellow;
+            this.placeOrderButton.Location = new System.Drawing.Point(52, 688);
+            this.placeOrderButton.Name = "button2";
+            this.placeOrderButton.Size = new System.Drawing.Size(199, 40);
+            this.placeOrderButton.TabIndex = 22;
+            this.placeOrderButton.Text = "Place the Order";
+            this.placeOrderButton.UseVisualStyleBackColor = false;
+            this.placeOrderButton.Click += new System.EventHandler(this.PlaceOrder_Button);
             // 
             // Categories
             // 
@@ -304,31 +302,31 @@
             this.Categories.Text = "Category";
             this.Categories.SelectionChangeCommitted += new System.EventHandler(this.Categories_SelectionChangeCommitted);
             // 
-            // label4
+            // logOut
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Tomato;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(25, 767);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "LogOut";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.logOut.AutoSize = true;
+            this.logOut.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.logOut.ForeColor = System.Drawing.Color.Tomato;
+            this.logOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.logOut.Location = new System.Drawing.Point(25, 767);
+            this.logOut.Name = "label4";
+            this.logOut.Size = new System.Drawing.Size(91, 29);
+            this.logOut.TabIndex = 7;
+            this.logOut.Text = "LogOut";
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
-            // label7
+            // exitLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Forte", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(1565, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 35);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.exitLabel.AutoSize = true;
+            this.exitLabel.BackColor = System.Drawing.Color.Transparent;
+            this.exitLabel.Font = new System.Drawing.Font("Forte", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exitLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.exitLabel.Location = new System.Drawing.Point(1565, 0);
+            this.exitLabel.Name = "label7";
+            this.exitLabel.Size = new System.Drawing.Size(38, 35);
+            this.exitLabel.TabIndex = 11;
+            this.exitLabel.Text = "X";
+            this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
             // 
             // GuestOrder
             // 
@@ -336,8 +334,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1601, 808);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.exitLabel);
+            this.Controls.Add(this.logOut);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuestOrder";
@@ -356,16 +354,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label logOut;
+        private System.Windows.Forms.Label exitLabel;
         private System.Windows.Forms.ComboBox Categories;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button placeOrderButton;
         private Guna.UI2.WinForms.Guna2DataGridView ItemsGV;
         private Guna.UI2.WinForms.Guna2DataGridView OrdersGV;
         private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LabelAmount;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.TextBox Guest;

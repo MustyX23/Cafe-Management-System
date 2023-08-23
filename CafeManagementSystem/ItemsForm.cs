@@ -10,24 +10,14 @@ using System.Windows.Forms;
 namespace CafeManagementSystem
 {
     public partial class ItemsForm : Form
-    {
-
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
-
+    {        
         public ItemsForm()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
+        SqlConnection connection = 
+            new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void label8_Click_1(object sender, EventArgs e)
         {
@@ -44,7 +34,7 @@ namespace CafeManagementSystem
         private void label4_Click(object sender, EventArgs e)
         {
             Hide();
-            Form1 login = new Form1();
+            Login login = new Login();
             login.Show();
         }
 
@@ -53,11 +43,6 @@ namespace CafeManagementSystem
             this.Hide();
             UsersForm users = new UsersForm();
             users.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)

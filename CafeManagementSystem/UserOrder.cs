@@ -16,12 +16,13 @@ namespace CafeManagementSystem
             InitializeComponent();
         }
 
+        DataTable table = new DataTable();
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 login = new Form1();
+            Login login = new Login();
             login.Show();
         }
 
@@ -42,11 +43,6 @@ namespace CafeManagementSystem
             Hide();
             UsersForm users = new UsersForm();
             users.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
         private void Populate()
         {
@@ -83,16 +79,6 @@ namespace CafeManagementSystem
         private void button5_Click(object sender, EventArgs e)
         {
             Populate();
-        }
-
-        private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void LabelAmount_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -133,9 +119,6 @@ namespace CafeManagementSystem
             }            
         }
 
-
-        DataTable table = new DataTable();
-
         private void UserOrder_Load(object sender, EventArgs e)
         {
             Populate();
@@ -145,7 +128,7 @@ namespace CafeManagementSystem
             table.Columns.Add("Unit Price", typeof(decimal));
             table.Columns.Add("Total", typeof(decimal));
             DateLabel.Text = DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
-            SellerName.Text = Form1.user;
+            SellerName.Text = Login.user;
         }
 
         private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
