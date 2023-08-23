@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CafeManagementSystem
 {
-    internal static class Program
+    public class StartUp
     {
         /// <summary>
         ///  The main entry point for the application.
