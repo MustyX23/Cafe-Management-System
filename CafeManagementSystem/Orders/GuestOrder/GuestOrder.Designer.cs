@@ -48,12 +48,14 @@
             this.addButton = new System.Windows.Forms.Button();
             this.placeOrderButton = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.logOut = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +74,7 @@
             this.panel1.Controls.Add(this.addButton);
             this.panel1.Controls.Add(this.placeOrderButton);
             this.panel1.Controls.Add(this.Categories);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(150, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 750);
@@ -113,9 +116,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("LEMON MILK Medium", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(486, 16);
+            this.label1.Location = new System.Drawing.Point(484, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(376, 68);
             this.label1.TabIndex = 46;
@@ -244,7 +248,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(899, 427);
+            this.label8.Location = new System.Drawing.Point(880, 440);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(210, 45);
             this.label8.TabIndex = 42;
@@ -305,6 +309,16 @@
             this.Categories.Text = "Category";
             this.Categories.SelectionChangeCommitted += new System.EventHandler(this.Categories_SelectionChangeCommitted);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1451, 792);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
             // logOut
             // 
             this.logOut.AutoSize = true;
@@ -361,6 +375,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,5 +400,6 @@
         private System.Windows.Forms.TextBox Guest;
         private System.Windows.Forms.TextBox OrderNum;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
