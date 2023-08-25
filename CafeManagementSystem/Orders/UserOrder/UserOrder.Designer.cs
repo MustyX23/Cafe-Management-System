@@ -54,9 +54,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -102,6 +106,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Categories);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(133, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 750);
@@ -109,16 +114,16 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Orange;
+            this.button6.BackColor = System.Drawing.Color.DarkTurquoise;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.Yellow;
-            this.button6.Location = new System.Drawing.Point(1227, 693);
+            this.button6.ForeColor = System.Drawing.Color.Transparent;
+            this.button6.Location = new System.Drawing.Point(1227, 703);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(199, 40);
             this.button6.TabIndex = 49;
-            this.button6.Text = "View the Orders";
+            this.button6.Text = "View Orders";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -135,11 +140,11 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Orange;
+            this.button5.BackColor = System.Drawing.Color.Red;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.Yellow;
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
             this.button5.Location = new System.Drawing.Point(248, 102);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(92, 33);
@@ -290,16 +295,16 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.BackColor = System.Drawing.Color.DarkGray;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(747, 698);
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(747, 703);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 40);
             this.button2.TabIndex = 22;
-            this.button2.Text = "Place the Order";
+            this.button2.Text = "Order Here";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -319,7 +324,7 @@
             this.LabelAmount.AutoSize = true;
             this.LabelAmount.Font = new System.Drawing.Font("Nexa Heavy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LabelAmount.ForeColor = System.Drawing.Color.Transparent;
-            this.LabelAmount.Location = new System.Drawing.Point(952, 693);
+            this.LabelAmount.Location = new System.Drawing.Point(952, 698);
             this.LabelAmount.Name = "LabelAmount";
             this.LabelAmount.Size = new System.Drawing.Size(269, 45);
             this.LabelAmount.TabIndex = 20;
@@ -331,7 +336,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(983, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 41);
@@ -352,7 +357,6 @@
             this.Categories.Size = new System.Drawing.Size(218, 33);
             this.Categories.TabIndex = 13;
             this.Categories.Text = "Category";
-            this.Categories.SelectedIndexChanged += new System.EventHandler(this.Categories_SelectedIndexChanged);
             this.Categories.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label1
@@ -396,6 +400,26 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1459, 792);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 51;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-357, 170);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(493, 718);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -407,6 +431,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserOrder";
@@ -417,6 +442,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +470,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

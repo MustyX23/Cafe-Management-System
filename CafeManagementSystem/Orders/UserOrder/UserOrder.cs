@@ -83,17 +83,36 @@ namespace CafeManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            string query = "INSERT into Orders VALUES (" + OrderNum.Text + ", '" + DateLabel.Text + "', '" + SellerName.Text + "', '" + LabelAmount.Text + "')";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Order is Successfully Created!");
-            connection.Close();
-        }
+            try
+            {
+                connection.Open();
 
-        private void Categories_SelectedIndexChanged(object sender, EventArgs e)
-        {
+                string query = "INSERT into Orders VALUES (@OrderNum, @DateLabel, @SellerName, @LabelAmount)";
+                SqlCommand command = new SqlCommand(query, connection);
 
+                // Use parameters to prevent SQL injection
+                command.Parameters.AddWithValue("@OrderNum", OrderNum.Text);
+                command.Parameters.AddWithValue("@DateLabel", DateLabel.Text);
+                command.Parameters.AddWithValue("@SellerName", SellerName.Text);
+                command.Parameters.AddWithValue("@LabelAmount", LabelAmount.Text);
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Order is Successfully Created!");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Order with this OrderNum is already in use. " +
+                    "Try again with different OrderNum.");
+            }
+            finally
+            {
+                // Ensure the connection is closed regardless of success or exception
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

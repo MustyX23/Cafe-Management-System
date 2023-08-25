@@ -271,7 +271,7 @@
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addButton.ForeColor = System.Drawing.Color.Yellow;
+            this.addButton.ForeColor = System.Drawing.Color.Transparent;
             this.addButton.Location = new System.Drawing.Point(930, 383);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(132, 41);
@@ -282,16 +282,16 @@
             // 
             // placeOrderButton
             // 
-            this.placeOrderButton.BackColor = System.Drawing.Color.Orange;
+            this.placeOrderButton.BackColor = System.Drawing.Color.DarkGray;
             this.placeOrderButton.FlatAppearance.BorderSize = 0;
             this.placeOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.placeOrderButton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.placeOrderButton.ForeColor = System.Drawing.Color.Yellow;
+            this.placeOrderButton.ForeColor = System.Drawing.Color.Transparent;
             this.placeOrderButton.Location = new System.Drawing.Point(52, 688);
             this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(199, 40);
             this.placeOrderButton.TabIndex = 22;
-            this.placeOrderButton.Text = "Place the Order";
+            this.placeOrderButton.Text = "Order Here";
             this.placeOrderButton.UseVisualStyleBackColor = false;
             this.placeOrderButton.Click += new System.EventHandler(this.PlaceOrder_Button);
             // 
