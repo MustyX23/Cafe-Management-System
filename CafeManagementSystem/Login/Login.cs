@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CafeManagementSystem
@@ -14,6 +8,8 @@ namespace CafeManagementSystem
     public partial class Login : Form
     {
         public static string user;
+        private bool isPasswordVisible = false;
+
         public Login()
         {
             InitializeComponent();
@@ -61,6 +57,20 @@ namespace CafeManagementSystem
         private void label7_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void pictureBoxShowPassword_Click(object sender, EventArgs e)
+        {
+            // Toggle password visibility
+            isPasswordVisible = !isPasswordVisible;
+
+            if (isPasswordVisible)
+            {
+                Password.UseSystemPasswordChar = false; 
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = true;
+            }
         }
     }
 }
