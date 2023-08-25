@@ -91,5 +91,31 @@ namespace CafeManagementSystem
             graphics.DrawString("*****Order  Summary*****",
                 new Font("Century", 25, FontStyle.Bold), Brushes.Red, new Point(170, 420));
         }
+
+        private void clear_orders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "DELETE FROM Orders";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("All Orders Cleared Successfully!");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }
