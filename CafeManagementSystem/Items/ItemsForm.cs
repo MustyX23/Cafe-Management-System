@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CafeManagementSystem.Users.Models.UsersModels;
+using CafeManagementSystem.Users.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,9 +42,7 @@ namespace CafeManagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UsersForm users = new UsersForm();
-            users.Show();
+            OpenUsersFormIfAdmin();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,15 +51,29 @@ namespace CafeManagementSystem
             {
                 MessageBox.Show("Fill all the fields.");
             }
+            else if (ItemCat.SelectedItem == null)
+            {
+                MessageBox.Show("Select an item category.");
+            }
             else
             {
-                connection.Open();
-                string query = "INSERT into Items VALUES ('" + ItemNum.Text + "', '" + ItemName.Text + "', '" +ItemCat.SelectedItem.ToString() + "', '" + ItemPrice.Text + "')";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();
-                MessageBox.Show("Item is successfully created!");
-                connection.Close();
-                Populate();
+                try
+                {
+                    connection.Open();
+                    string query = "INSERT into Items VALUES ('" + ItemNum.Text + "', '" + ItemName.Text + "', '" + ItemCat.SelectedItem.ToString() + "', '" + ItemPrice.Text + "')";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Item is successfully created!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("An item with the same ItemNumber already exists.");
+                }
+                finally
+                {
+                    connection.Close();
+                    Populate();
+                }
             }
         }
 
@@ -138,6 +152,20 @@ namespace CafeManagementSystem
         private void ItemCat_SelectionChangeCommitted(object sender, EventArgs e)
         {
             FilterByCategory();
+        }
+        private void OpenUsersFormIfAdmin()
+        {
+            User authenticatedUser = UserManager.GetUserFromDatabase(Login.user, connection.ToString());
+            if (authenticatedUser.Role != "Admin")
+            {
+                MessageBox.Show("Access Denied!", "You don't have permission to visit this section.");
+            }
+            else
+            {
+                Hide();
+                UsersForm users = new UsersForm();
+                users.Show();
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CafeManagementSystem.Users.Models;
+using CafeManagementSystem.Users.Models.UsersModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,9 +42,7 @@ namespace CafeManagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Hide();
-            UsersForm users = new UsersForm();
-            users.Show();
+            OpenUsersFormIfAdmin();
         }
         private void Populate()
         {
@@ -58,7 +58,7 @@ namespace CafeManagementSystem
         private void FilterByCategory()
         {
             connection.Open();
-            string query = "SELECT * FROM Items WHERE ItemCategory = '"+Categories.SelectedItem.ToString()+"'";
+            string query = "SELECT * FROM Items WHERE ItemCategory = '" + Categories.SelectedItem.ToString() + "'";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(sqlDataAdapter);
             DataSet dataSet = new DataSet();
@@ -115,6 +115,11 @@ namespace CafeManagementSystem
             }
         }
 
+        private void SellerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             ViewOrders viewOrders = new ViewOrders();
@@ -140,7 +145,7 @@ namespace CafeManagementSystem
                 flag = 0;
                 sum += total;
                 LabelAmount.Text = sum.ToString() + " lv.";
-            }            
+            }
         }
 
         private void UserOrder_Load(object sender, EventArgs e)
@@ -162,5 +167,21 @@ namespace CafeManagementSystem
             price = decimal.Parse(ItemsGV.SelectedRows[0].Cells[3].Value.ToString());
             flag = 1;
         }
+        private void OpenUsersFormIfAdmin()
+        {
+            User authenticatedUser = UserManager.GetUserFromDatabase(Login.user, connection.ToString());
+            if (authenticatedUser.Role != "Admin")
+            {
+                MessageBox.Show("Access Denied!", "You don't have permission to visit this section.");
+            }
+            else
+            {
+                Hide();
+                UsersForm users = new UsersForm();
+                users.Show();
+            }
+        }
+
+
     }
 }
