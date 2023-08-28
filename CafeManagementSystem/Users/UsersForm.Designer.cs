@@ -31,10 +31,10 @@ namespace CafeManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@ namespace CafeManagementSystem
             this.label9 = new System.Windows.Forms.Label();
             this.UsersUsernameTBL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.UsersPasswordTBL = new System.Windows.Forms.TextBox();
@@ -59,11 +58,15 @@ namespace CafeManagementSystem
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -112,6 +115,9 @@ namespace CafeManagementSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.UsersGV);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
@@ -120,7 +126,6 @@ namespace CafeManagementSystem
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.UsersUsernameTBL);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.UsersPasswordTBL);
@@ -259,7 +264,7 @@ namespace CafeManagementSystem
             // 
             // UsersUsernameTBL
             // 
-            this.UsersUsernameTBL.BackColor = System.Drawing.Color.Tan;
+            this.UsersUsernameTBL.BackColor = System.Drawing.Color.SandyBrown;
             this.UsersUsernameTBL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersUsernameTBL.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsersUsernameTBL.Location = new System.Drawing.Point(125, 224);
@@ -279,17 +284,6 @@ namespace CafeManagementSystem
             this.label7.Size = new System.Drawing.Size(114, 39);
             this.label7.TabIndex = 23;
             this.label7.Text = "Username";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Maiandra GD", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(136, 176);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 25);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "\r\n";
             // 
             // label2
             // 
@@ -315,7 +309,7 @@ namespace CafeManagementSystem
             // 
             // UsersPasswordTBL
             // 
-            this.UsersPasswordTBL.BackColor = System.Drawing.Color.Tan;
+            this.UsersPasswordTBL.BackColor = System.Drawing.Color.SandyBrown;
             this.UsersPasswordTBL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersPasswordTBL.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsersPasswordTBL.Location = new System.Drawing.Point(125, 302);
@@ -338,6 +332,7 @@ namespace CafeManagementSystem
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(125, 191);
             this.pictureBox1.Name = "pictureBox1";
@@ -348,7 +343,7 @@ namespace CafeManagementSystem
             // 
             // UsersPhoneTBL
             // 
-            this.UsersPhoneTBL.BackColor = System.Drawing.Color.Tan;
+            this.UsersPhoneTBL.BackColor = System.Drawing.Color.SandyBrown;
             this.UsersPhoneTBL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersPhoneTBL.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UsersPhoneTBL.Location = new System.Drawing.Point(125, 367);
@@ -359,6 +354,7 @@ namespace CafeManagementSystem
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(125, 355);
             this.pictureBox3.Name = "pictureBox3";
@@ -369,6 +365,7 @@ namespace CafeManagementSystem
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(125, 269);
             this.pictureBox2.Name = "pictureBox2";
@@ -390,6 +387,27 @@ namespace CafeManagementSystem
             this.label8.Text = "X";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(41, 543);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(280, 171);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(-333, 124);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(493, 718);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 35;
+            this.pictureBox5.TabStop = false;
+            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -401,6 +419,7 @@ namespace CafeManagementSystem
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsersForm";
@@ -413,6 +432,8 @@ namespace CafeManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,7 +451,6 @@ namespace CafeManagementSystem
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox UsersUsernameTBL;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox UsersPasswordTBL;
@@ -443,5 +463,7 @@ namespace CafeManagementSystem
         private Guna.UI2.WinForms.Guna2DataGridView UsersGV;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }
