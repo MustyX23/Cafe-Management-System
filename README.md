@@ -12,13 +12,11 @@ Welcome to the Cafe Management System, a robust and user-friendly application de
 - [Order Tracking](#order-tracking)
 - [Filtering Items](#filtering-items)
 ## Overview
-![Login](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/5ca9c4a1-c7b6-4f3a-932b-f91a4e0eaeb9)
-![Order](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/7bcd5388-4735-4ef8-a66d-f320a441d775)
-![Items](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/a11b7242-3bd6-4ad3-9b65-7737e485efea)
-![Users](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/0feafafb-b037-4f65-8960-c9fcd82b4751)
-![ViewOrders](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/fd944600-975b-47af-884e-2a09f0e26072)
-
-
+![Login](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/f506595b-7228-4ca8-99bb-79cd4e221fd7)
+![Order](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/cd542a41-fe4c-4d75-a4c0-2b4e6c927d1c)
+![Items](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/fd9f1cac-87c2-4dac-a7c7-4390544d8324)
+![Users](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/a84af284-c204-47a7-8fab-2ac89f7edaf3)
+![ViewOrders](https://github.com/MustyX23/Cafe-Management-System/assets/118231484/7e7a4a13-6717-45df-ba0e-d08c0a2f5d5a)
 The Cafe Management System is designed to streamline and enhance the operations of a cafe. It offers a user-friendly interface for cafe staff to manage orders, users, and items efficiently. Here's a brief overview of the system's features:
 
 ## Features
