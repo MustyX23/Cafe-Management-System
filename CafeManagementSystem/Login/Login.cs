@@ -8,7 +8,6 @@ namespace CafeManagementSystem
     public partial class Login : Form
     {
         public static string user;
-        private bool isPasswordVisible = false;
 
         public Login()
         {
@@ -17,60 +16,62 @@ namespace CafeManagementSystem
 
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Login_Button(object sender, EventArgs e)
         {
-            //UserOrder userOrder = new UserOrder();
-            //userOrder.Show();
-            //this.Hide();
             user = Username.Text;
 
-            if (Username.Text == "" || Password.Text == "")
+            if (string.IsNullOrEmpty(Username.Text) || string.IsNullOrEmpty(Password.Text))
             {
                 MessageBox.Show("Enter a valid Username or Password.");
+                return;
+            }
+
+            connection.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password", connection);
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Username", Username.Text);
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Password", Password.Text);
+
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            if (dataTable.Rows[0][0].ToString() == "1")
+            {
+                OpenUserOrderForm();
             }
             else
             {
-                connection.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT COUNT(*) FROM Users WHERE Username = '"+Username.Text+"' AND Password = '"+Password.Text+"'", connection);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                if (dataTable.Rows[0][0].ToString() == "1")
-                {
-                    UserOrder userOrder = new UserOrder();
-                    userOrder.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Username or Password!");
-                }
-                connection.Close();
+                MessageBox.Show("Wrong Username or Password!");
             }
-
+            connection.Close();
         }
-        private void label4_Click(object sender, EventArgs e)
+
+        private void OpenGuest_Button(object sender, EventArgs e)
+        {
+            OpenGuestForm();
+        }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBoxShowPassword_Click(object sender, EventArgs e)
+        {
+            // Toggle password visibility
+            Password.UseSystemPasswordChar = !Password.UseSystemPasswordChar;
+        }
+
+        private void OpenUserOrderForm()
+        {
+            UserOrder userOrder = new UserOrder();
+            userOrder.Show();
+            this.Hide();
+        }
+        private void OpenGuestForm()
         {
             this.Hide();
             GuestOrder guest = new GuestOrder();
             guest.Show();
-        }
-        private void label7_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void pictureBoxShowPassword_Click(object sender, EventArgs e)
-        {
-            // Toggle password visibility
-            isPasswordVisible = !isPasswordVisible;
-
-            if (isPasswordVisible)
-            {
-                Password.UseSystemPasswordChar = false; 
-            }
-            else
-            {
-                Password.UseSystemPasswordChar = true;
-            }
         }
     }
 }

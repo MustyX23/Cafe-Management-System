@@ -1,12 +1,9 @@
-﻿using CafeManagementSystem.Users.Models;
+﻿using CafeManagementSystem.Orders.Models;
+using CafeManagementSystem.Users.Models;
 using CafeManagementSystem.Users.Models.UsersModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CafeManagementSystem
@@ -20,27 +17,28 @@ namespace CafeManagementSystem
 
         DataTable table = new DataTable();
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
+        private OrderData orderData = new OrderData();
 
-        private void label4_Click(object sender, EventArgs e)
+        private void LogOut_Button(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Items_Button(object sender, EventArgs e)
         {
             this.Hide();
             ItemsForm items = new ItemsForm();
             items.Show();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Exit(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Users_Button(object sender, EventArgs e)
         {
             OpenUsersFormIfAdmin();
         }
@@ -67,21 +65,17 @@ namespace CafeManagementSystem
             connection.Close();
         }
 
-        int num, flag;
-        decimal price, total, sum;
-        string item, category;
-
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             FilterByCategory();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Refresh(object sender, EventArgs e)
         {
             Populate();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Order_Here(object sender, EventArgs e)
         {
             try
             {
@@ -115,36 +109,31 @@ namespace CafeManagementSystem
             }
         }
 
-        private void SellerName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void ViewOrders(object sender, EventArgs e)
         {
             ViewOrders viewOrders = new ViewOrders();
             viewOrders.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddToCart(object sender, EventArgs e)
         {
             if (Quantity.Text == "")
             {
                 MessageBox.Show("Set Quantity of the Item!");
             }
-            else if (flag == 0)
+            else if (orderData.Flag == 0)
             {
                 MessageBox.Show("Select the Item you want to Order!");
             }
             else
             {
-                num++;
-                total = price * int.Parse(Quantity.Text);
-                table.Rows.Add(num, item, category, price, total);
+                orderData.Num++;
+                orderData.Total = orderData.Price * int.Parse(Quantity.Text);
+                table.Rows.Add(orderData.Num, orderData.Item, orderData.Category, orderData.Price, orderData.Total);
                 OrdersGV.DataSource = table;
-                flag = 0;
-                sum += total;
-                LabelAmount.Text = sum.ToString() + " lv.";
+                orderData.Flag = 0;
+                orderData.Sum += orderData.Total;
+                LabelAmount.Text = orderData.Sum.ToString() + " lv.";
             }
         }
 
@@ -162,10 +151,10 @@ namespace CafeManagementSystem
 
         private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            item = ItemsGV.SelectedRows[0].Cells[1].Value.ToString();
-            category = ItemsGV.SelectedRows[0].Cells[2].Value.ToString();
-            price = decimal.Parse(ItemsGV.SelectedRows[0].Cells[3].Value.ToString());
-            flag = 1;
+            orderData.Item = ItemsGV.SelectedRows[0].Cells[1].Value.ToString();
+            orderData.Category = ItemsGV.SelectedRows[0].Cells[2].Value.ToString();
+            orderData.Price = decimal.Parse(ItemsGV.SelectedRows[0].Cells[3].Value.ToString());
+            orderData.Flag = 1;
         }
         private void OpenUsersFormIfAdmin()
         {

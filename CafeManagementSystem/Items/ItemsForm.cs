@@ -1,32 +1,28 @@
-﻿using CafeManagementSystem.Users.Models.UsersModels;
-using CafeManagementSystem.Users.Models;
+﻿using CafeManagementSystem.Users.Models;
+using CafeManagementSystem.Users.Models.UsersModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CafeManagementSystem
 {
     public partial class ItemsForm : Form
-    {        
+    {
+        private SqlConnection connection;
+
         public ItemsForm()
         {
             InitializeComponent();
+            connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
         }
 
-        SqlConnection connection = 
-            new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mustafe\Documents\CafeDB.mdf;Integrated Security=True;Connect Timeout=30");
-
-        private void label8_Click_1(object sender, EventArgs e)
+        private void Exit(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Order_Button(object sender, EventArgs e)
         {
             this.Hide();
             UserOrder order = new UserOrder();
@@ -40,40 +36,52 @@ namespace CafeManagementSystem
             login.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Users_Button(object sender, EventArgs e)
         {
             OpenUsersFormIfAdmin();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Add_Button(object sender, EventArgs e)
+        {
+            if (ValidateInputFields())
+            {
+                InsertItemIntoDatabase();
+                Populate();
+            }
+        }
+
+        private bool ValidateInputFields()
         {
             if (ItemNum.Text == "" || ItemName.Text == "" || ItemPrice.Text == "")
             {
                 MessageBox.Show("Fill all the fields.");
+                return false;
             }
             else if (ItemCat.SelectedItem == null)
             {
                 MessageBox.Show("Select an item category.");
+                return false;
             }
-            else
+            return true;
+        }
+
+        private void InsertItemIntoDatabase()
+        {
+            try
             {
-                try
-                {
-                    connection.Open();
-                    string query = "INSERT into Items VALUES ('" + ItemNum.Text + "', '" + ItemName.Text + "', '" + ItemCat.SelectedItem.ToString() + "', '" + ItemPrice.Text + "')";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Item is successfully created!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("An item with the same ItemNumber already exists.");
-                }
-                finally
-                {
-                    connection.Close();
-                    Populate();
-                }
+                connection.Open();
+                string query = $"INSERT into Items VALUES ('{ItemNum.Text}', '{ItemName.Text}', '{ItemCat.SelectedItem.ToString()}', '{ItemPrice.Text}')";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Item is successfully created!");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("An item with the same ItemNumber already exists.");
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -100,26 +108,32 @@ namespace CafeManagementSystem
             connection.Close();
         }
 
-        private void ItemsForm_Load(object sender, EventArgs e)
+        private void Delete_Button(object sender, EventArgs e)
         {
-            Populate();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (ItemNum.Text == "" || ItemName.Text == "")
+            if (string.IsNullOrEmpty(ItemNum.Text) || string.IsNullOrEmpty(ItemName.Text))
             {
                 MessageBox.Show("Select The Item you want to Delete");
             }
             else
             {
+                DeleteItemFromDatabase();
+                Populate();
+            }
+        }
+
+        private void DeleteItemFromDatabase()
+        {
+            try
+            {
                 connection.Open();
-                string query = "DELETE FROM Items WHERE ItemNumber = '" + ItemNum.Text + "'";
+                string query = $"DELETE FROM Items WHERE ItemNumber = '{ItemNum.Text}'";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Item is successfully Deleted!");
+            }
+            finally
+            {
                 connection.Close();
-                Populate();
             }
         }
 
@@ -131,21 +145,28 @@ namespace CafeManagementSystem
             ItemPrice.Text = ItemsGV.SelectedRows[0].Cells[3].Value.ToString();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Edit_Button(object sender, EventArgs e)
         {
-            if (ItemNum.Text == "" || ItemName.Text == "" || ItemPrice.Text == "")
+            if (ValidateInputFields())
             {
-                MessageBox.Show("All fields must be filled.");
+                UpdateItemInDatabase();
+                Populate();
             }
-            else
+        }
+
+        private void UpdateItemInDatabase()
+        {
+            try
             {
                 connection.Open();
-                string query = "UPDATE Items SET ItemName = '" + ItemName.Text + "', ItemPrice = '" + ItemPrice.Text + "', ItemCategory = '" + ItemCat.SelectedItem.ToString() + "' WHERE ItemNumber = '" + ItemNum.Text + "'";
+                string query = $"UPDATE Items SET ItemName = '{ItemName.Text}', ItemPrice = '{ItemPrice.Text}', ItemCategory = '{ItemCat.SelectedItem.ToString()}' WHERE ItemNumber = '{ItemNum.Text}'";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Item is successfully Updated!");
+            }
+            finally
+            {
                 connection.Close();
-                Populate();
             }
         }
 
@@ -153,6 +174,7 @@ namespace CafeManagementSystem
         {
             FilterByCategory();
         }
+
         private void OpenUsersFormIfAdmin()
         {
             User authenticatedUser = UserManager.GetUserFromDatabase(Login.user, connection.ToString());
@@ -166,6 +188,11 @@ namespace CafeManagementSystem
                 UsersForm users = new UsersForm();
                 users.Show();
             }
+        }
+
+        private void ItemsForm_Load(object sender, EventArgs e)
+        {
+            Populate();
         }
     }
 }

@@ -25,36 +25,34 @@ namespace CafeManagementSystem
             UsersGV.DataSource = dataSet.Tables[0];
             connection.Close();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void Order_Button(object sender, EventArgs e)
         {
-            UserOrder usersOrder = new UserOrder();
-            usersOrder.Show();
-            this.Hide();
+            OpenOrder();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void Exit(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void LogOut(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Items_Button(object sender, EventArgs e)
         {
             this.Hide();
             ItemsForm items = new ItemsForm();
             items.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Add_Button(object sender, EventArgs e)
         {
             connection.Open();
-            string query = "INSERT into Users values ('" + UsersUsernameTBL.Text + "', '" + UsersPasswordTBL.Text + "', '" + UsersPhoneTBL.Text + "')";
+            string query = "INSERT into Users values ('" + UsersUsernameTBL.Text + "', '" + UsersPasswordTBL.Text + "', '" + UsersPhoneTBL.Text + "', '"+RoleLabel.Text+"')";
             SqlCommand command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
             MessageBox.Show("User is successfully created!");
@@ -72,9 +70,10 @@ namespace CafeManagementSystem
             UsersUsernameTBL.Text = UsersGV.SelectedRows[0].Cells[0].Value.ToString();
             UsersPasswordTBL.Text = UsersGV.SelectedRows[0].Cells[1].Value.ToString();
             UsersPhoneTBL.Text = UsersGV.SelectedRows[0].Cells[2].Value.ToString();
+            RoleLabel.Text = UsersGV.SelectedRows[0].Cells[3].Value.ToString();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Delete_Button(object sender, EventArgs e)
         {
             if (UsersUsernameTBL.Text == "")
             {
@@ -92,22 +91,28 @@ namespace CafeManagementSystem
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Edit_Button(object sender, EventArgs e)
         {
-            if (UsersUsernameTBL.Text == "" || UsersPasswordTBL.Text == "" || UsersPhoneTBL.Text == "")
+            if (UsersUsernameTBL.Text == "" || UsersPasswordTBL.Text == "" || RoleLabel.Text == "")
             {
                 MessageBox.Show("All fields must be filled.");
             }
             else
             {
                 connection.Open();
-                string query = "UPDATE Users SET Phone = '"+UsersPhoneTBL.Text+"', Password = '"+UsersPasswordTBL.Text+"' WHERE Username = '"+UsersUsernameTBL.Text+"'";
+                string query = "UPDATE Users SET Phone = '"+UsersPhoneTBL.Text+"', Password = '"+UsersPasswordTBL.Text+"', Role = '"+RoleLabel.Text+"' WHERE Username = '"+UsersUsernameTBL.Text+"'";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("User is successfully Updated!");
                 connection.Close();
                 Populate();
             }
+        }
+        private void OpenOrder()
+        {
+            UserOrder usersOrder = new UserOrder();
+            usersOrder.Show();
+            this.Hide();
         }
     }
 }

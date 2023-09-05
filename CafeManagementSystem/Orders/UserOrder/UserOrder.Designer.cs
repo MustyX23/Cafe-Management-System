@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserOrder));
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.DateLabel = new System.Windows.Forms.Label();
@@ -49,12 +49,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.LabelAmount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addToCart = new System.Windows.Forms.Button();
             this.Categories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.itemsButton = new System.Windows.Forms.Button();
+            this.usersButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
@@ -74,20 +74,20 @@
             this.label7.Size = new System.Drawing.Size(38, 35);
             this.label7.TabIndex = 14;
             this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Click += new System.EventHandler(this.Exit);
             // 
-            // label4
+            // LogOut
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Tomato;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(12, 770);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 29);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "LogOut";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.LogOut.AutoSize = true;
+            this.LogOut.Font = new System.Drawing.Font("Maiandra GD", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.LogOut.ForeColor = System.Drawing.Color.Tomato;
+            this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LogOut.Location = new System.Drawing.Point(12, 770);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(91, 29);
+            this.LogOut.TabIndex = 13;
+            this.LogOut.Text = "LogOut";
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Button);
             // 
             // panel1
             // 
@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.LabelAmount);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.addToCart);
             this.panel1.Controls.Add(this.Categories);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -125,7 +125,7 @@
             this.button6.TabIndex = 49;
             this.button6.Text = "View Orders";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.ViewOrders);
             // 
             // DateLabel
             // 
@@ -151,31 +151,31 @@
             this.button5.TabIndex = 40;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Refresh);
             // 
             // ItemsGV
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.ItemsGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.ItemsGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.ItemsGV.BackgroundColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ItemsGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ItemsGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.ItemsGV.ColumnHeadersHeight = 30;
             this.ItemsGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ItemsGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ItemsGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.ItemsGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.ItemsGV.Location = new System.Drawing.Point(726, 109);
             this.ItemsGV.Name = "ItemsGV";
@@ -209,27 +209,27 @@
             // 
             // OrdersGV
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.OrdersGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.OrdersGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.OrdersGV.BackgroundColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OrdersGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrdersGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.OrdersGV.ColumnHeadersHeight = 30;
             this.OrdersGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OrdersGV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OrdersGV.DefaultCellStyle = dataGridViewCellStyle12;
             this.OrdersGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.OrdersGV.Location = new System.Drawing.Point(726, 501);
             this.OrdersGV.Name = "OrdersGV";
@@ -281,7 +281,6 @@
             this.SellerName.TabIndex = 24;
             this.SellerName.Text = "SellerName";
             this.SellerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SellerName.TextChanged += new System.EventHandler(this.SellerName_TextChanged);
             // 
             // OrderNum
             // 
@@ -307,7 +306,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Order Here";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Order_Here);
             // 
             // label8
             // 
@@ -331,20 +330,20 @@
             this.LabelAmount.TabIndex = 20;
             this.LabelAmount.Text = "Order Amount";
             // 
-            // button1
+            // addToCart
             // 
-            this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(983, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 41);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Add to Cart";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addToCart.BackColor = System.Drawing.Color.Orange;
+            this.addToCart.FlatAppearance.BorderSize = 0;
+            this.addToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addToCart.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addToCart.ForeColor = System.Drawing.Color.Transparent;
+            this.addToCart.Location = new System.Drawing.Point(983, 396);
+            this.addToCart.Name = "addToCart";
+            this.addToCart.Size = new System.Drawing.Size(132, 41);
+            this.addToCart.TabIndex = 18;
+            this.addToCart.Text = "Add to Cart";
+            this.addToCart.UseVisualStyleBackColor = false;
+            this.addToCart.Click += new System.EventHandler(this.AddToCart);
             // 
             // Categories
             // 
@@ -381,35 +380,35 @@
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
             // 
-            // button3
+            // itemsButton
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.button3.Location = new System.Drawing.Point(-2, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 40);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Items";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.itemsButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.itemsButton.FlatAppearance.BorderSize = 0;
+            this.itemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.itemsButton.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.itemsButton.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.itemsButton.Location = new System.Drawing.Point(-2, 106);
+            this.itemsButton.Name = "itemsButton";
+            this.itemsButton.Size = new System.Drawing.Size(119, 40);
+            this.itemsButton.TabIndex = 23;
+            this.itemsButton.Text = "Items";
+            this.itemsButton.UseVisualStyleBackColor = false;
+            this.itemsButton.Click += new System.EventHandler(this.Items_Button);
             // 
-            // button4
+            // usersButton
             // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.button4.Location = new System.Drawing.Point(-2, 161);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 40);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Users";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.usersButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.usersButton.FlatAppearance.BorderSize = 0;
+            this.usersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usersButton.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usersButton.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.usersButton.Location = new System.Drawing.Point(-2, 161);
+            this.usersButton.Name = "usersButton";
+            this.usersButton.Size = new System.Drawing.Size(119, 40);
+            this.usersButton.TabIndex = 24;
+            this.usersButton.Text = "Users";
+            this.usersButton.UseVisualStyleBackColor = false;
+            this.usersButton.Click += new System.EventHandler(this.Users_Button);
             // 
             // pictureBox1
             // 
@@ -427,10 +426,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1601, 808);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.usersButton);
+            this.Controls.Add(this.itemsButton);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -453,16 +452,16 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LogOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LabelAmount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addToCart;
         private System.Windows.Forms.ComboBox Categories;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button itemsButton;
+        private System.Windows.Forms.Button usersButton;
         private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.TextBox SellerName;
         private System.Windows.Forms.TextBox OrderNum;

@@ -39,9 +39,9 @@
             this.Username = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.openGuest = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxShowPassword = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -75,7 +75,7 @@
             this.label7.Size = new System.Drawing.Size(35, 32);
             this.label7.TabIndex = 10;
             this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Click += new System.EventHandler(this.Exit);
             // 
             // label6
             // 
@@ -159,19 +159,19 @@
             this.Password.TabIndex = 4;
             this.Password.UseSystemPasswordChar = true;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Kalam", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(60, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 44);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginButton.BackColor = System.Drawing.Color.Coral;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Font = new System.Drawing.Font("Kalam", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loginButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.loginButton.Location = new System.Drawing.Point(60, 208);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(134, 44);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.Login_Button);
             // 
             // pictureBox1
             // 
@@ -183,17 +183,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // openGuest
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(98, 255);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 22);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Guest";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.openGuest.AutoSize = true;
+            this.openGuest.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.openGuest.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.openGuest.Location = new System.Drawing.Point(98, 255);
+            this.openGuest.Name = "openGuest";
+            this.openGuest.Size = new System.Drawing.Size(56, 22);
+            this.openGuest.TabIndex = 6;
+            this.openGuest.Text = "Guest";
+            this.openGuest.Click += new System.EventHandler(this.OpenGuest_Button);
             // 
             // pictureBox2
             // 
@@ -222,8 +222,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 323);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.openGuest);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Username);
@@ -256,9 +256,9 @@
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Password;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label openGuest;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
